@@ -1,0 +1,656 @@
+<include#iostream>
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+int main ()
+{
+    string res, res_SI, res_CI;
+    float p, r, t, a, CI, SI, g, l, n;
+    int y, sy, q, bm, m, sm, w, d;
+    cout <<"Welcome to Ishaan's INTERESTing Interest calculator! What do you wanna calculate (SI,CI) : ";
+    cin >> res;
+    if (res == "SI")
+    {
+        cout << "\nLet's see.... What do you want to calculate (SI,p,r,t) : ";
+        cin >> res_SI;
+        if (res_SI == "SI")
+        {
+            cout << "Enter principle amount in AED. ";
+            cin >> p;
+            cout << "Enter rate of interest. ";
+            cin >> r;r=r/100;
+            cout << "Enter time duration. ";
+            cin >> t;
+            SI = p * r * t;
+            cout << "Simple Interest is " << SI << " AED";
+        }
+        else if (res_SI == "p")
+        {
+            cout << "Enter SI in AED. ";
+            cin >> SI;
+            cout << "Enter rate of interest. ";
+            cin >> r;
+            cout << "Enter time duration. ";
+            cin >> t;
+            p = SI*100/ r * t;
+            cout << "Principle amount is " << p << " AED";
+        }
+        else if (res_SI == "r")
+        {
+            cout << "Enter SI in AED. ";
+            cin >> SI;
+            cout << "Enter principle amount. ";
+            cin >> p;
+            cout << "Enter time duration. ";
+            cin >> t;
+            r = SI * 100 / p * t;
+            cout << "Rate of interest is " << r << "%";
+        }
+        else if (res_SI == "t")
+        {
+            cout << "Enter SI in AED. ";
+            cin >> SI;
+            cout << "Enter rate of interest. ";
+            cin >> r;
+            cout << "Enter principle amount. ";
+            cin >> p;
+            t = SI*100/ r * p;
+            cout << "Time duration is " << t << ".";
+        }
+    }
+    else if (res == "CI")
+    {
+        cout << "\nLet's see...... What do u wanna find (CI,p,r,t,amount): ";
+        cin >> res_CI;
+        if (res_CI == "CI")
+        {
+            cout<<"Is it compounded {anually:1, semi_anually:2, quarterly:4, bi_monthly:6, monthly:12, semi_monthly:24, weekly:52, daily(365):3)}. "; //hehe, funny no.
+            cin>>n;
+            //**monthly**
+            if (n==12)
+            {
+                n=12;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //**anually**
+            else if (n==1)
+            {
+                y=1;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //**weekly**
+            else if (n==52)
+            {
+                n=52;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //**semi_anually**
+            else if (n==2)
+            {
+                n=2;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //**daily**
+            else if (n==365)
+            {
+                n=365;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //**semi_monthly**
+            else if (n==24)
+            {
+                n=24;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //quarterly
+            else if (n==4)
+            {
+                n=4;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            //bi_monthly
+            else if (n==6)
+            {
+                n=6;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter time duration. ";
+                cin >> t;
+                a = p*(pow (1 + (r/n), n*t));
+                cout << "Compound interest is " << a - p << "  AED.";
+            }
+            else 
+            cout<<"3rr0r. incorrect value........... ";
+        }
+        else if (res_CI == "p")
+        {
+            cout<<"Is it compounded {anually:1, semi_anually:2, quarterly:4, bi_monthly:6, monthly:12, semi_monthly:24, weekly:52, daily(365):3)}. ";
+            cin>>n;
+            //**monthly**
+            if (n==12)
+            {
+                n=12;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //**anually**
+            else if (n==1)
+            {
+                n=1;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //**weekly**
+            else if (n=52)
+            {
+                n=52;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //**daily**
+            else if (n==365)
+            {
+                n==365;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //**semi_anually**
+            else if (n==2)
+            {
+                n=2;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //**semi_monthly*
+            else if (n==24)
+            {
+                n=24;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //quarterly
+            else if (n==4)
+            {
+                n=4;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            //bi_monthly
+            else if (n==6)
+            {
+                n=6;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter amount. ";
+                cin >> a;
+                cout << "Enter time duration. ";
+                cin >> t;
+                g= pow(1+(r/n),n*t);
+                p = a / g;
+                cout << "Principle amount is " << p << " AED";
+            }
+            else 
+            cout<<"3rr0r. incorrect value........... ";
+        }
+        else if (res_CI == "amount")
+        {
+            cout<<"Is it compounded {anually:1, semi_anually:2, quarterly:4, bi_monthly:6, monthly:12, semi_monthly:24, weekly:52, daily(365):3)}. ";
+            cin>>n;
+            //anually
+            if (n==1)
+            {
+                n=1;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount compounded anually is " << a << " AED";
+            }
+            //semi_anually
+            else if (n==2)
+            {
+                n=2;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount compounded semi anually is " << a << " AED";
+            }
+            //quarterly
+            else if (n==4)
+            {
+                n=4;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount compounded semi anually is " << a << " AED";
+            }
+            //bi_monthly
+            else if (n==6)
+            {
+                n=6;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount compounded semi anually is " << a << " AED";
+            }
+            //monthly
+            else if (n=12)
+            {
+                n=12;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount is " << a << " AED";
+            }
+            //semi_monthly
+            else if (n==24)
+            {
+                n=24;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount is " << a << " AED";
+            }
+            //weekly
+            else if (n==52)
+            {
+                n=52;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount is " << a << " AED";
+            }
+            //daily
+            else if (n==365)
+            {
+                n=365;
+                cout << "Enter rate of interest. ";
+                cin >> r;r=r/100;
+                cout << "Enter principle amount. ";
+                cin >> p;
+                cout<< "Enter time duration. ";
+                cin>> t;
+                g = pow(1+ (r/n),n*t);
+                a = p*g;
+                cout << "Amount is " << a << " AED";
+            }
+            else 
+            cout<<"3rr0r. incorrect value........... ";
+        }
+        else if (res_CI == "r")
+        {
+            cout<<"Is it compounded {anually:1, semi_anually:2, quarterly:4, bi_monthly:6, monthly:12, semi_monthly:24, weekly:52, daily(365):3)}. ";
+            cin>>n;
+            //anually
+            if (n==1)
+            {
+                n=1;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";//hehe, funny no.
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //semi_anually
+            else if (n=2)
+            {
+                n=2;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //quarterly
+            else if (n=4)
+            {
+                n=4;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //bi_monthly
+            else if (n=6)
+            {
+                n=6;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //monthly
+            else if (n=12)
+            {
+                n=12;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //semi_monthly
+            else if (n==24)
+            {
+                n=24;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //weekly
+            else if (n==52)
+            {
+                n=52;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            //daily
+            else if (n==365)
+            {
+                n=365;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter time duration. ";
+                cin>>t;
+                g= pow(a/p,1/(t*n));
+                r=n*(g-1);
+                cout<<"Rate of interest is "<<r<<"%.";
+            }
+            else 
+            cout<<"3rr0r. incorrect value........... ";
+        }
+        else if (res_CI == "t")
+        {
+            cout<<"Is it compounded {anually:1, semi_anually:2, quarterly:4, bi_monthly:6, monthly:12, semi_monthly:24, weekly:52, daily(365):3)}. ";            
+            cin>>n;
+            //anually
+            if (n==1)
+            {
+                n=1;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //semi_anually
+            else if (n==2)
+            {
+                n=2;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //quarterly
+            else if (n==4)
+            {
+                n=4;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //bi_monthly
+            else if (n==6)
+            {
+                n=6;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //monthly
+            else if (n==12)
+            {
+                n=12;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //semi_monthly
+            else if (n==24)
+            {
+                n=24;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //weekly
+            else if (n==52)
+            {
+                n=52;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            //daily
+            else if (n==365)
+            {
+                n=365;
+                cout<<"Enter principle amount. ";
+                cin>>p;
+                cout<<"Enter amount. ";
+                cin>>a;
+                cout<<"Enter rate of interest. ";
+                cin>>r;r=r/100;
+                g= log10(a/p); l=n*(log10(1+(r/n)));
+                t=g/l;
+                cout<<"Time duration is "<<t;
+            }
+            else 
+            cout<<"3rr0r. incorrect value........... ";
+        }
+    }
+    return 0;
+}
